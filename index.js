@@ -90,20 +90,21 @@ function checkHighScore(){
   var userRespond= readlineSync.question("Do you think you can be among high scorers? ");
   
   if(userRespond === "yes" ){
-      for(j=0; j<highscorers.length; j++){
-        if(score === highscorers[j].score){
-          console.log(chalk.green.bgYellow("Congratulate! you beat the high score"));
-          console.log(chalk.yellow.bgWhite("Your name is "+chalk.green.bgCyan(userWelcome) +" and your score is "+score));
-          console.log("Please give screenshot of your scores");
-          console.log("Thank you! for taking up the quiz");
-          process.exit(); 
-        }else{
-          console.log(chalk.gray("Sorry! you couldn't beat the high score"));          
-          process.exit();
-        }
+    for(j=0; j<highscorers.length; j++){
+      if(score === highscorers[j].score){
+      console.log(chalk.green.bgYellow("Congratulate! you beat the high score"));
+      console.log(chalk.yellow.bgWhite("Your name is "+chalk.green.bgCyan(userWelcome) +" and your score is "+score));
+      console.log(chalk.yellow("Please give screenshot of your scores"));
+      console.log(chalk.yellow("Thank you! for taking up the quiz")); 
+      process.exit();
+      }else{
+      console.log(chalk.gray("Sorry! you couldn't beat the high score"));          
+      process.exit();        
       }
-  } 
+    } 
+  }
 }
 
 checkHighScore();
 console.log("Thank you! For taking up the quiz");
+console.log("Visit again.");
